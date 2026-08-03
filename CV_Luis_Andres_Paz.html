@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Luis Andres Paz Paz | Pasantía de Ingeniería de Sistemas</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #2d3748;
+      background-color: #f7fafc;
+      line-height: 1.5;
+      font-size: 13.5px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      background: #ffffff;
+      padding: 35px 40px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    @media print {
+      body {
+        background-color: #ffffff;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        width: 100%;
+        min-height: auto;
+        padding: 25px 30px;
+      }
+    }
+
+    .banner-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #edf2f7;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    .header-text {
+      flex: 1;
+    }
+
+    .name {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    .title-sub {
+      font-size: 14px;
+      font-weight: 600;
+      color: #2563eb;
+      margin-top: 2px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      font-size: 11.5px;
+      color: #475569;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-item a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .profile-photo {
+      width: 82px;
+      height: 82px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #cbd5e1;
+      margin-left: 20px;
+    }
+
+    /* TWO COLUMN LAYOUT */
+    .columns {
+      display: flex;
+      gap: 30px;
+    }
+
+    .left-col {
+      width: 32%;
+      flex-shrink: 0;
+    }
+
+    .right-col {
+      width: 68%;
+      flex-grow: 1;
+    }
+
+    /* SECTIONS */
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+      border-bottom: 1.5px solid #e2e8f0;
+      padding-bottom: 4px;
+    }
+
+    /* LEFT COL CONTENT */
+    .edu-block {
+      margin-bottom: 20px;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 13.5px;
+      color: #0f172a;
+    }
+
+    .edu-school {
+      font-size: 12px;
+      color: #2563eb;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .edu-date {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 3px;
+    }
+
+    /* SKILLS PILLS */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 22px;
+    }
+
+    .skill-pill {
+      background: #f1f5f9;
+      color: #1e293b;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* LANGUAGES */
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .lang-name {
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .lang-level {
+      color: #64748b;
+      font-size: 11px;
+    }
+
+    .dots {
+      color: #2563eb;
+      letter-spacing: 2px;
+    }
+
+    /* RIGHT COL CONTENT */
+    .summary-text {
+      font-size: 12.5px;
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .exp-block {
+      margin-bottom: 18px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .exp-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .exp-date {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .exp-sub {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 4px;
+    }
+
+    .exp-bullets {
+      list-style-type: disc;
+      padding-left: 16px;
+      margin-top: 4px;
+    }
+
+    .exp-bullets li {
+      font-size: 11.5px;
+      color: #334155;
+      margin-bottom: 4px;
+      line-height: 1.45;
+    }
+
+    .footer-brand {
+      position: absolute;
+      bottom: 15px;
+      left: 40px;
+      right: 40px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #94a3b8;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page">
+    
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-text">
+        <h1 class="name">LUIS ANDRES PAZ PAZ</h1>
+        <div class="title-sub">Pasante de Ingeniería de Sistemas | Desarrollador Full-Stack</div>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            📞 <span>+591 78543113</span>
+          </div>
+          <div class="contact-item">
+            ✉️ <span>andrespazpaz2018@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            🌐 <a href="https://github.com/LuisPazPaz" target="_blank">github.com/LuisPazPaz</a>
+          </div>
+          <div class="contact-item">
+            📍 <span>Santa Cruz de la Sierra, Bolivia</span>
+          </div>
+        </div>
+      </div>
+
+      <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=LuisAndresPaz" alt="Foto Luis Andres Paz" class="profile-photo" />
+    </div>
+
+    <!-- TWO COLUMNS -->
+    <div class="columns">
+      
+      <!-- LEFT COLUMN -->
+      <div class="left-col">
+        
+        <div class="section-title">EDUCACIÓN</div>
+        <div class="edu-block">
+          <div class="edu-degree">Ingeniería en Sistemas</div>
+          <div class="edu-school">Universidad Tecnológica Privada de Santa Cruz (UTEPSA)</div>
+          <div class="edu-date">📅 2019 - 2025 | Titulado / Graduado</div>
+          <div style="font-size: 11px; color: #64748b; margin-top: 4px;">Santa Cruz de la Sierra, Bolivia</div>
+        </div>
+
+        <div class="section-title">HABILIDADES</div>
+        <div class="skills-container">
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">Node.js</span>
+          <span class="skill-pill">React</span>
+          <span class="skill-pill">PHP</span>
+          <span class="skill-pill">MySQL</span>
+          <span class="skill-pill">Tailwind CSS</span>
+          <span class="skill-pill">Vite</span>
+          <span class="skill-pill">API REST</span>
+          <span class="skill-pill">JWT</span>
+          <span class="skill-pill">SSO Bridge</span>
+          <span class="skill-pill">Node-Cron</span>
+          <span class="skill-pill">Git / GitHub</span>
+          <span class="skill-pill">CSS3 / HTML5</span>
+          <span class="skill-pill">Scrum</span>
+        </div>
+
+        <div class="section-title">IDIOMAS</div>
+        <div class="lang-item">
+          <span class="lang-name">Español</span>
+          <span class="lang-level">Avanzado <span class="dots">●●●●○</span></span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-name">Inglés</span>
+          <span class="lang-level">Básico <span class="dots">●●○○○</span></span>
+        </div>
+
+        <div class="section-title" style="margin-top: 20px;">LOGROS CLAVE</div>
+        <ul style="font-size: 11.5px; color: #475569; padding-left: 14px; line-height: 1.4;">
+          <li style="margin-bottom: 6px;"><b>Autenticación Central:</b> SSO Jump que conecta PHP y Node.js.</li>
+          <li style="margin-bottom: 6px;"><b>Doble Pool de BD:</b> Aislamiento total entre panel admin y clientes.</li>
+          <li style="margin-bottom: 6px;"><b>Cobros 00:00:</b> Cron Job de suspensiones diarias automáticas.</li>
+        </ul>
+
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div class="right-col">
+        
+        <div class="section-title">OBJETIVO / RESUMEN PROFESIONAL</div>
+        <div class="summary-text">
+          Soy <b>Ingeniero en Sistemas titulado por la Universidad Tecnológica Privada de Santa Cruz (UTEPSA)</b>. Mi objetivo es integrarme a una pasantía profesional en desarrollo de software para volcar mis bases técnicas, aportar con código limpio y participar en proyectos de alto impacto.<br><br>
+          Formo parte del equipo de desarrollo de <b>Surazo Digital</b>, participando en el diseño del sistema de inicio de sesión unificado (SSO con JWT) y recuperación de contraseñas, la suite Colors ERP / POS para licorerías y restaurantes, y el panel administrativo de suscripciones. Me enfoco en entregar soluciones ágiles, seguras y de alto rendimiento.
+        </div>
+
+        <div class="section-title">EXPERIENCIA & DESARROLLO DE SOFTWARE</div>
+
+        <!-- Bloque 1 -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <div class="exp-title">Desarrollador Full-Stack & SaaS Architect</div>
+            <div class="exp-date">📅 02/2026 - Presente</div>
+          </div>
+          <div class="exp-sub">Surazo Digital - Panel Administrativo • Santa Cruz, Bolivia</div>
+          <ul class="exp-bullets">
+            <li>Diseñé e implementé el panel administrativo centralizado con métricas de ingresos (MRR), aprobación de pagos por transferencia/QR y bitácora de auditoría (React, Node.js, Express, Tailwind CSS).</li>
+            <li>Estructuré el aislamiento físico de bases de datos relacionales (base de datos administrativa y base de datos maestra de identidad), separando credenciales de control interno de los datos de clientes.</li>
+            <li>Programé tareas automatizadas en servidores (Node-Cron a las 00:00) para la comprobación diaria de vencimientos, revocación selectiva de accesos y suspensión de cuentas.</li>
+          </ul>
+        </div>
+
+        <!-- Bloque 2 -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <div class="exp-title">Desarrollador Full-Stack / Backend</div>
+            <div class="exp-date">📅 10/2025 - 01/2026</div>
+          </div>
+          <div class="exp-sub">Surazo Digital - Core de Identidad & SSO • Santa Cruz, Bolivia</div>
+          <ul class="exp-bullets">
+            <li>Desarrollé junto al equipo el sistema de login unificado (base de datos maestra de autenticación), módulo autogestionado de recuperación de contraseñas por correo y selector multi-organización.</li>
+            <li>Arquitecturé la pasarela Single Sign-On (SSO Jump con JWT) permitiendo la autenticación única cross-domain entre aplicaciones Node.js/React y clientes legados en PHP.</li>
+          </ul>
+        </div>
+
+        <!-- Bloque 3 -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <div class="exp-title">Desarrollador Full-Stack - Sistemas ERP / POS</div>
+            <div class="exp-date">📅 04/2025 - 09/2025</div>
+          </div>
+          <div class="exp-sub">Colors ERP - Módulos Licorería y Restaurante • Santa Cruz, Bolivia</div>
+          <ul class="exp-bullets">
+            <li>Desarrollé la suite de Punto de Venta (POS) e inventarios para retail comercial (Colors ERP Licorería con conversión automática de cajas a unidades).</li>
+            <li>Desarrollé 2 variantes de sistemas para restaurantes (versión LITE/Ágil y versión Estándar con mapa de mesas interactivo en tiempo real y comandas de cocina).</li>
+            <li>Programé el control de sesiones de caja chica (ingresos/egresos) y alertas automáticas de stock crítico para la toma de decisiones.</li>
+          </ul>
+        </div>
+
+        <!-- Bloque 4 -->
+        <div class="exp-block">
+          <div class="exp-header">
+            <div class="exp-title">Desarrollador Full-Stack SaaS</div>
+            <div class="exp-date">📅 01/2025 - 03/2025</div>
+          </div>
+          <div class="exp-sub">Surazo Digital - Tarjetas Digitales & Catálogo • Santa Cruz, Bolivia</div>
+          <ul class="exp-bullets">
+            <li>Desarrollé la plataforma SaaS autogestionable para tarjetas de presentación interactivas y catálogos de venta basados en recetas JSON.</li>
+            <li>Integré directamente la API de WhatsApp para conversión automática de carritos de compras.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FOOTER BRANDING -->
+    <div class="footer-brand">
+      <span>CV - Luis Andres Paz Paz | Solicitud de Pasantía Profesional</span>
+      <span>github.com/LuisPazPaz</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
