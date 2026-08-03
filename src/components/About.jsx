@@ -4,7 +4,6 @@ import { personalInfo } from '../data/portfolioData';
 export default function About() {
   return (
     <section id="about" className="py-28 relative">
-      {/* Section label */}
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-cyan-400 font-mono text-xs tracking-widest uppercase mb-14 text-center">
           Sistemas
@@ -27,26 +26,25 @@ export default function About() {
             ))}
           </div>
 
-          {/* Photo placeholder frame — same style as Angel's */}
+          {/* Photo frame */}
           <div className="relative flex justify-center">
             <div className="relative w-64 h-64 md:w-72 md:h-72">
               {/* Outer decorative border */}
               <div className="absolute inset-0 rounded-2xl border border-cyan-400/20 bg-white/5 backdrop-blur-sm" />
-              {/* Inner photo area */}
-              <div className="absolute inset-3 rounded-xl bg-slate-800/60 flex items-center justify-center overflow-hidden">
-                <div className="text-center space-y-3">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-400/30 to-teal-500/30 border border-cyan-400/30 flex items-center justify-center mx-auto">
-                    <span className="text-3xl font-black text-white">LP</span>
-                  </div>
-                  <p className="text-slate-400 text-xs">Luis Andres Paz Paz</p>
-                </div>
+              {/* Photo */}
+              <div className="absolute inset-3 rounded-xl overflow-hidden">
+                <img
+                  src={`${import.meta.env.BASE_URL}profile.jpg`}
+                  alt="Luis Andres Paz Paz"
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
-              {/* Floating badge */}
-              <div className="absolute -bottom-3 -right-3 bg-black border border-cyan-400/30 rounded-lg px-3 py-1.5">
+              {/* Floating badge bottom-right */}
+              <div className="absolute -bottom-3 -right-3 bg-black border border-cyan-400/40 rounded-lg px-3 py-1.5 shadow-lg shadow-cyan-400/10">
                 <span className="text-cyan-400 text-xs font-mono font-bold">Full Stack</span>
               </div>
-              {/* Floating badge 2 */}
-              <div className="absolute -top-3 -left-3 bg-black border border-purple-400/30 rounded-lg px-3 py-1.5">
+              {/* Floating badge top-left */}
+              <div className="absolute -top-3 -left-3 bg-black border border-purple-400/40 rounded-lg px-3 py-1.5 shadow-lg shadow-purple-400/10">
                 <span className="text-purple-400 text-xs font-mono font-bold">Sistemas</span>
               </div>
             </div>
