@@ -6,7 +6,6 @@ export default function ParticleBackground() {
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     let animationFrameId;
 
@@ -18,27 +17,29 @@ export default function ParticleBackground() {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
-
     window.addEventListener('resize', handleResize);
 
-    // Particle nodes configuration
-    const particleCount = Math.min(Math.floor(width / 18), 75);
+    // More particles, slightly faster for matrix feel
+    const particleCount = Math.min(Math.floor(width / 14), 95);
     const particles = [];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        radius: Math.random() * 1.5 + 1,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        radius: Math.random() * 1.2 + 0.8,
+        // Mix of emerald and cyan for some variety
+        color: Math.random() > 0.3
+          ? `rgba(16, 185, 129,`   // emerald-500
+          : `rgba(6, 182, 212,`,   // cyan-500
       });
     }
 
     const render = () => {
       ctx.clearRect(0, 0, width, height);
 
-      // Draw particle connections
       for (let i = 0; i < particles.length; i++) {
         const p1 = particles[i];
         p1.x += p1.vx;
@@ -50,7 +51,7 @@ export default function ParticleBackground() {
         // Draw particle dot
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 229, 255, 0.4)';
+        ctx.fillStyle = `${p1.color} 0.5)`;
         ctx.fill();
 
         for (let j = i + 1; j < particles.length; j++) {
@@ -59,12 +60,13 @@ export default function ParticleBackground() {
           const dy = p1.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 130) {
+          if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 229, 255, ${0.15 * (1 - dist / 130)})`;
-            ctx.lineWidth = 0.6;
+            // Line color: emerald green
+            ctx.strokeStyle = `rgba(16, 185, 129, ${0.18 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
@@ -84,7 +86,7 @@ export default function ParticleBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-60"
+      className="fixed inset-0 pointer-events-none z-0 opacity-70"
     />
   );
 }

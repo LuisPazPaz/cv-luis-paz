@@ -14,9 +14,8 @@ export default function Contact() {
     <section id="contact" className="py-28 relative">
       <div className="max-w-4xl mx-auto px-6 text-center">
 
-        {/* Header — like Angel's "Construyamos algo útil" */}
         <div className="space-y-4 mb-14">
-          <p className="text-cyan-400 font-mono text-xs tracking-widest uppercase">
+          <p className="text-emerald-400 font-mono text-xs tracking-widest uppercase">
             Contacto
           </p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white">
@@ -29,28 +28,28 @@ export default function Contact() {
 
         {/* Contact cards */}
         <div className="grid sm:grid-cols-3 gap-4 mb-10">
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-cyan-400/30 transition-all">
-            <Mail className="w-6 h-6 text-cyan-400" />
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-emerald-400/30 transition-all">
+            <Mail className="w-6 h-6 text-emerald-400" />
             <div>
               <p className="text-slate-500 text-xs mb-1">Email</p>
-              <a href={`mailto:${personalInfo.email}`} className="text-white text-sm font-medium hover:text-cyan-400 transition-colors break-all">
+              <a href={`mailto:${personalInfo.email}`} className="text-white text-sm font-medium hover:text-emerald-400 transition-colors break-all">
                 {personalInfo.email}
               </a>
             </div>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-cyan-400/30 transition-all">
-            <Phone className="w-6 h-6 text-cyan-400" />
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-emerald-400/30 transition-all">
+            <Phone className="w-6 h-6 text-emerald-400" />
             <div>
               <p className="text-slate-500 text-xs mb-1">Teléfono</p>
-              <a href={`tel:${personalInfo.phone}`} className="text-white text-sm font-medium hover:text-cyan-400 transition-colors">
+              <a href={`tel:${personalInfo.phone}`} className="text-white text-sm font-medium hover:text-emerald-400 transition-colors">
                 {personalInfo.phone}
               </a>
             </div>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-cyan-400/30 transition-all">
-            <MapPin className="w-6 h-6 text-cyan-400" />
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 hover:border-emerald-400/30 transition-all">
+            <MapPin className="w-6 h-6 text-emerald-400" />
             <div>
               <p className="text-slate-500 text-xs mb-1">Ubicación</p>
               <p className="text-white text-sm font-medium">{personalInfo.location}</p>
@@ -63,7 +62,7 @@ export default function Contact() {
           href={personalInfo.github}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold text-sm rounded-full hover:bg-white/15 hover:border-white/40 transition-all"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-white/10 border border-white/20 text-white font-semibold text-sm rounded-full hover:bg-emerald-400/10 hover:border-emerald-400/40 hover:text-emerald-400 transition-all"
         >
           <GithubIcon className="w-5 h-5" />
           Ver proyectos en GitHub

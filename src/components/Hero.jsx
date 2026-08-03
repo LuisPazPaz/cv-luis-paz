@@ -4,17 +4,14 @@ import { ArrowDown } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden"
-    >
-      {/* Subtle radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,229,255,0.04)_0%,transparent_70%)] pointer-events-none" />
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 overflow-hidden">
 
-      {/* Content */}
+      {/* Subtle radial glow — emerald */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.05)_0%,transparent_70%)] pointer-events-none" />
+
       <div className="relative z-10 max-w-4xl mx-auto space-y-6">
 
-        {/* Big name — like Angel's serif style */}
+        {/* Big name */}
         <h1 className="text-6xl sm:text-7xl md:text-8xl font-black text-white leading-none tracking-tight">
           Luis Andres<br />
           <span className="text-white">Paz Paz</span>
@@ -22,7 +19,7 @@ export default function Hero() {
 
         {/* Role labels */}
         <div className="space-y-1">
-          <p className="text-cyan-400 font-bold tracking-widest uppercase text-sm">
+          <p className="text-emerald-400 font-bold tracking-widest uppercase text-sm">
             Ingeniería en Sistemas
           </p>
           <p className="text-slate-400 tracking-widest uppercase text-xs font-semibold">
@@ -30,14 +27,14 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Quick summary box — like Angel's green terminal box */}
-        <div className="mx-auto max-w-lg border border-white/10 rounded-xl p-5 bg-white/5 backdrop-blur-sm text-left space-y-2 mt-6">
-          <p className="text-[11px] text-cyan-400 font-mono tracking-widest uppercase mb-3">
+        {/* Quick summary box */}
+        <div className="mx-auto max-w-lg border border-emerald-500/20 rounded-xl p-5 bg-emerald-950/20 backdrop-blur-sm text-left space-y-2 mt-6">
+          <p className="text-[11px] text-emerald-400 font-mono tracking-widest uppercase mb-3">
             Resumen rápido
           </p>
           {personalInfo.quickSummary.map((item, i) => (
             <div key={i} className="flex items-start gap-3 text-slate-300 text-sm">
-              <span className="text-cyan-400 font-bold mt-0.5">&gt;</span>
+              <span className="text-emerald-400 font-bold mt-0.5">&gt;</span>
               <span>{item}</span>
             </div>
           ))}
@@ -52,7 +49,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <a
             href="#projects"
-            className="px-8 py-3.5 bg-cyan-400 text-black font-bold text-sm rounded-full hover:bg-cyan-300 transition-all shadow-lg shadow-cyan-400/30 hover:shadow-cyan-400/50 hover:scale-105"
+            className="px-8 py-3.5 bg-emerald-400 text-black font-bold text-sm rounded-full hover:bg-emerald-300 transition-all shadow-lg shadow-emerald-400/30 hover:shadow-emerald-400/50 hover:scale-105"
           >
             Ver proyectos
           </a>
