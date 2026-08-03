@@ -1,46 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-[#080B11] text-slate-100 antialiased font-sans selection:bg-cyan-500/30 selection:text-cyan-200;
+    background-color: #000000;
+    color: #f1f5f9;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00e5ff33;
+  }
+
+  /* Selection */
+  ::selection {
+    background: rgba(0, 229, 255, 0.2);
+    color: #fff;
   }
 }
 
-/* Glassmorphism utilities */
-.glass-panel {
-  background: rgba(19, 27, 46, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.glass-card {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-  background: rgba(30, 41, 59, 0.75);
-  border-color: rgba(6, 182, 212, 0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.15);
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #080B11;
-}
-::-webkit-scrollbar-thumb {
-  background: #1E293B;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #0891b2;
+@layer utilities {
+  .bg-white\/8 {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
 }

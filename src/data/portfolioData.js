@@ -4,7 +4,7 @@ export const personalInfo = {
   subtitle: "DESARROLLADOR FULL STACK & SAAS ARCHITECT",
   location: "Santa Cruz de la Sierra, Bolivia",
   github: "https://github.com/LuisPazPaz",
-  email: "andrespazpaz2018@gmail.com",
+  email: "andrespazpaz2014@gmail.com",
   phone: "+591 78543113",
   linkedin: "https://linkedin.com/in/luis-paz-paz-5a5822225/",
   
